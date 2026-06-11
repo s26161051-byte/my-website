@@ -32,18 +32,32 @@ h3 {
 /* ヘッダのスタイルを指定 */
 header {
   width: 960px;
-  margin: 32px auto 32px auto;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 32px auto ;
+  position: relative; 
+}
+
+.left_block {
+  text-align: left;
 }
 
 header img {
   width: 640px;
 }
 
+.site_title {
+  flex: 1;
+  text-align: center;
+}
+
 .site_reserve {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 320px;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 /* スマホ用ヘッダのスタイル*/
@@ -57,8 +71,18 @@ header img {
   }
 
   .site_reserve {
+    position: absolute;  
+    top: 80px;
+    right: 0;
+    width: auto;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .left_block {
     width: 100%;
-    text-align: center;
+    text-align: left;    
   }
 }
 
@@ -146,12 +170,21 @@ nav a:hover {
     width: 100%;
   }
 }
+
 /* メインのコンセプトの指定 */
 #main-concept {
+  text-align: center; 
   margin: 80px auto 80px auto;
   display: flex;
   flex-wrap: wrap;
 }
+
+#main-concept p {
+  width: 100%;
+  text-align: center !important;
+  margin: 0 auto;
+}
+
 
 #main-concept img {
   margin: 0 auto 0 auto;
@@ -206,6 +239,16 @@ nav a:hover {
   display: inline-block;       
 }
 
+#main-takeout ul {
+  display: block;          
+  width:fit-content;           
+  list-style-position: outside;
+  text-align: left;        
+  padding-left: 20px;
+  margin: 0 auto;
+}
+
+
 #main-menu img {
   display: block;
   margin: 0 auto;
@@ -238,5 +281,28 @@ nav a:hover {
 @media screen and (max-width: 960px) {
   .menu_category {
     width: 100%;
+  }
+}
+/* PC 用（スマホ以外） */
+@media screen and (min-width: 961px) {
+  header {
+    width: 960px;
+    margin: 32px auto;
+    text-align: center;   
+    position: relative;   
+  }
+
+  .left_block {
+    text-align: left;     
+  }
+  .site_reserve {
+    position: absolute;
+    right: 100px;  
+    top: 120px;
+    width: 320px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 }
