@@ -305,4 +305,38 @@ nav a:hover {
     flex-direction: column;
     gap: 4px;
   }
+@media screen and (max-width: 600px) {
+
+  /* メニュー・コンセプトの枠をスマホ幅に合わせる */
+  .menu_category,
+  .concept_category,
+  .menu_block {
+    width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* メニューのリストが横に広がらないようにする */
+  #main-menu ul {
+    width: 100% !important;
+    display: block !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* iframe（カレンダー・マップ）をスマホ幅に合わせる */
+  iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* main 内の画像をスマホ幅に合わせる */
+  main img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 16px auto !important;
+  }
+}
 }
