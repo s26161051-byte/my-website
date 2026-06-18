@@ -29,60 +29,10 @@ h3 {
   font-weight: bold;
 }
 
-/* ヘッダのスタイルを指定 */
-header {
-  width: 960px;
-  margin: 32px auto ;
-  position: relative; 
-}
-
-.left_block {
-  text-align: left;
-}
-
-header img {
-  width: 640px;
-}
-
-.site_title {
-  flex: 1;
-  text-align: center;
-}
-
-.site_reserve {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 320px;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 /* スマホ用ヘッダのスタイル*/
 @media screen and (max-width: 960px) {
   header {
     width: 100%;
-  }
-
-  header img {
-    width: 100%;
-  }
-
-  .site_reserve {
-    position: absolute;  
-    top: 80px;
-    right: 0;
-    width: auto;
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .left_block {
-    width: 100%;
-    text-align: left;    
   }
 }
 
@@ -128,7 +78,7 @@ nav a:hover {
 
 /* メインのイベント画像の指定 */
 #main-event img {
-  width: 280px;
+  width: 360px;
   margin: 8px;
 }
 
@@ -283,31 +233,6 @@ nav a:hover {
     width: 100%;
   }
 }
-/* PC 用（スマホ以外） */
-@media screen and (min-width: 961px) {
-  header {
-    width: 960px;
-    margin: 32px auto;
-    text-align: center;   
-    position: relative;   
-  }
-
-  .left_block {
-    text-align: left;     
-  }
-  .site_reserve {
-    position: absolute;
-    right: 100px;  
-    top: 120px;
-    width: 320px;
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-}
-
-  @media screen and (max-width: 600px) {
 
   /* メニュー・コンセプトの枠をスマホ幅に合わせる */
   .menu_category,
@@ -326,34 +251,24 @@ nav a:hover {
     padding-left: 20px !important;
     box-sizing: border-box !important;
   }
-
-  @media screen and (max-width: 600px) {
-
-  /* カレンダーを縦に長くする */
   .calendar_news iframe {
     width: 100% !important;
-    height: 1000px !important;  /* ← 好きな長さに調整できる */
+    height: 1000px !important;
   }
 
-  /* マップを縦に長くする */
   .access_map iframe {
     width: 100% !important;
-    height: 400px !important;   /* ← ここも自由に変えられる */
+    height: 400px !important;
   }
-}
 
   /* main 内の画像をスマホ幅に合わせる */
+  @media screen and (max-width: 600px) {
   main img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
     margin: 0 auto 16px auto !important;
   }
-  @media screen and (max-width: 600px) {
-
-  /* 全体を中央寄せ */
-  body, main, header, nav, section, div, p, h1, h2, h3, ul, li {
-    text-align: center !important;
   }
 
   /* リストの左寄せを消す */
@@ -369,6 +284,66 @@ nav a:hover {
   #main-takeout li {
     text-align: center !important;
   }
+
+  #main-menu ul,
+  #main-takeout ul {
+  list-style-position: inside; /* ← 点を枠の中に入れる */
+  padding-left: 0;             /* ← 左の余白を消す */
 }
 
+
+
+.header_wrap {
+  display: flex;
+  justify-content: space-between; /* 左ロゴ / 右予約ブロック */
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+/* 左：タイトル画像 */
+.title_block img {
+  width: 750px; /* 好きな大きさに調整OK */
+  height: auto;
+}
+
+/* 右：予約ブロック */
+.site_reserve {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.reserve_tel {
+  font-size: 20px;
+  color: #6f4c5b;
+}
+
+.reserve_btn {
+  font-size: 18px;
+  color: #6f4c5b;
+  text-decoration: none;
+}
+
+header {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* スマホ用：縦並びに戻す */
+@media screen and (max-width: 600px) {
+  .header_wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site_reserve {
+    text-align: center;
+  }
+.title_block img {
+  width: 420px;
+  height: auto;
+}
 }
