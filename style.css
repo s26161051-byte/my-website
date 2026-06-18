@@ -305,7 +305,8 @@ nav a:hover {
     flex-direction: column;
     gap: 4px;
   }
-@media screen and (max-width: 600px) {
+}
+  @media screen and (max-width: 600px) {
 
   /* メニュー・コンセプトの枠をスマホ幅に合わせる */
   .menu_category,
@@ -338,7 +339,4 @@ nav a:hover {
     display: block !important;
     margin: 0 auto 16px auto !important;
   }
-}
-  /* update */
-
 }
