@@ -306,6 +306,7 @@ nav a:hover {
     gap: 4px;
   }
 }
+
   @media screen and (max-width: 600px) {
 
   /* メニュー・コンセプトの枠をスマホ幅に合わせる */
@@ -326,11 +327,20 @@ nav a:hover {
     box-sizing: border-box !important;
   }
 
-  /* iframe（カレンダー・マップ）をスマホ幅に合わせる */
-  iframe {
+  @media screen and (max-width: 600px) {
+
+  /* カレンダーを縦に長くする */
+  .calendar_news iframe {
     width: 100% !important;
-    height: auto !important;
+    height: 1000px !important;  /* ← 好きな長さに調整できる */
   }
+
+  /* マップを縦に長くする */
+  .access_map iframe {
+    width: 100% !important;
+    height: 400px !important;   /* ← ここも自由に変えられる */
+  }
+}
 
   /* main 内の画像をスマホ幅に合わせる */
   main img {
@@ -339,4 +349,26 @@ nav a:hover {
     display: block !important;
     margin: 0 auto 16px auto !important;
   }
+  @media screen and (max-width: 600px) {
+
+  /* 全体を中央寄せ */
+  body, main, header, nav, section, div, p, h1, h2, h3, ul, li {
+    text-align: center !important;
+  }
+
+  /* リストの左寄せを消す */
+  #main-menu ul,
+  #main-takeout ul {
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  /* メニューのリスト項目も中央寄せ */
+  #main-menu li,
+  #main-takeout li {
+    text-align: center !important;
+  }
+}
+
 }
